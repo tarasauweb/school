@@ -44,60 +44,66 @@ window.addEventListener('load', () => {
 
 
     function slider() {
-        let numberSilde = 0;
+       
         const mySlider = document.querySelector('.slider')
-        const slides = mySlider.querySelectorAll('.slide')
+        if (mySlider != null) {
+            let numberSilde = 0;
+            const slides = mySlider.querySelectorAll('.slide')
 
-        const btnLeft = mySlider.querySelector('#btnSlideLeft')
-        const btnRight = mySlider.querySelector('#btnSlideRight')
-        
-        function prevSlide() {
-            btnLeft.addEventListener('click', () => {
-                for (let i = 0; i < slides.length; i++) {
-                    if (numberSilde <= 0) {
-                        numberSilde = slides.length
+            const btnLeft = mySlider.querySelector('#btnSlideLeft')
+            const btnRight = mySlider.querySelector('#btnSlideRight')
+
+            function prevSlide() {
+                btnLeft.addEventListener('click', () => {
+                    for (let i = 0; i < slides.length; i++) {
+                        if (numberSilde <= 0) {
+                            numberSilde = slides.length
+                        }
+                        slides[i].style.display = 'none'
+                        slides[numberSilde - 1].style.display = 'block'
                     }
-                    slides[i].style.display = 'none'
-                    slides[numberSilde - 1].style.display = 'block'
-                }
-                numberSilde--
-                return numberSilde
-            })
-        }
-        function nextSlide() {
-            console.log(numberSilde)
-            btnRight.addEventListener('click', () => {
-                numberSilde++
+                    numberSilde--
+                    return numberSilde
+                })
+            }
+            function nextSlide() {
                 console.log(numberSilde)
-                for (let i = 0; i < slides.length; i++) {
-                   if(numberSilde>=slides.length){
-                        numberSilde = 0
-                   }
-                    slides[i].style.display = 'none'
-                    slides[numberSilde].style.display = 'block'
-                }
+                btnRight.addEventListener('click', () => {
+                    numberSilde++
+                    console.log(numberSilde)
+                    for (let i = 0; i < slides.length; i++) {
+                        if (numberSilde >= slides.length) {
+                            numberSilde = 0
+                        }
+                        slides[i].style.display = 'none'
+                        slides[numberSilde].style.display = 'block'
+                    }
+                    return numberSilde
+                })
                 return numberSilde
-            })
-            return numberSilde
-        }
-        console.log(window.innerWidth)
-        if (window.innerWidth < 992) {
-            if (slides.length > 1) {
-                console.log(slides.length)
-                for (let i = 1; i < slides.length; i++) {
+            }
+            console.log(window.innerWidth)
+            if (window.innerWidth < 992) {
+                if (slides.length > 1) {
+                    console.log(slides.length)
+                    for (let i = 1; i < slides.length; i++) {
+                        slides[i].style.display = 'none'
+                    }
+                    prevSlide()
+                    nextSlide()
+                }
+            }
+            else if (window.innerWidth > 992) {
+                console.log(992)
+                for (let i = 2; i < slides.length; i++) {
                     slides[i].style.display = 'none'
                 }
-                prevSlide()
-                nextSlide()
             }
         }
-        else if (window.innerWidth > 992) {
-            console.log(992)
-            for (let i = 2; i < slides.length; i++) {
-                slides[i].style.display = 'none'
-            }
-        }
+
     }
     slider()
+
+
 })
 
