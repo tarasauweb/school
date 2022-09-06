@@ -1009,14 +1009,24 @@ button{
 }
 
 @media screen and (max-width:576px){
+    .offer{
+        text-align: center;
+    }
     .offer__title{
-        font-size: 40px;
+        font-size: 46px;
+        margin-top: 100px;
     }
-    .offer__title_span{
-        font-size: 65px;
-    }
+    
     .offer__subtitle{
-        font-size: 18px;
+        font-size: 10px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 125%;
+    }
+    .offer__btn{
+        width: 100%;
+        display: flex;
+        justify-content:center;
     }
     .help__btns{
         flex-direction: column;
@@ -1114,11 +1124,9 @@ button{
     }
     .about-sublocks{
         justify-content: center;
+        width: 170px;
     }
-    .about__span{
-        min-width:320px;
-        width: 100%;
-    }
+
     .top-offer__list{
         margin: 0;
         border-right:none;
@@ -1138,5 +1146,12 @@ button{
     }
     .help__subtitle{
         margin: 0;
+    }
+    .offer-m__span{
+        display: none;
+    }
+    .header{
+        padding-bottom: 80px;
+        
     }
 }
