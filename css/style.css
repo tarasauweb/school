@@ -8,7 +8,7 @@
 }
 
 .container{
-    max-width: 1140px;
+    max-width: 1170px;
     margin: 0 auto;
 }
 body{
@@ -47,11 +47,8 @@ button{
 }
 .img-responsive{
     position: absolute;
-    right: 0;
-    top:0px;
-    width: 500px;
-    height: auto;
-    z-index: 0;
+    top: 0;
+    right:0;
 }
 .h-container{
     position: relative;
@@ -1006,6 +1003,9 @@ button{
         margin-left: 0;
         margin-top: 20px;
     }
+    .header{
+        padding-bottom: 95px;
+    }
 }
 
 @media screen and (max-width:576px){
@@ -1014,7 +1014,23 @@ button{
     }
     .offer__title{
         font-size: 46px;
-        margin-top: 100px;
+        margin-top: 170px;
+    }
+    .header{
+        clip-path: none;
+        
+    }
+    .img-responsive{
+        position:absolute;
+    }
+    .container{
+        overflow:visible;
+    }
+    .header{
+        height: 500px;
+    }
+    .offer-m__span{
+        display: none;
     }
     
     .offer__subtitle{
@@ -1147,11 +1163,5 @@ button{
     .help__subtitle{
         margin: 0;
     }
-    .offer-m__span{
-        display: none;
-    }
-    .header{
-        padding-bottom: 80px;
-        
-    }
+    
 }
