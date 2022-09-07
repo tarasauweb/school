@@ -170,7 +170,7 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow:0px 0px 0px 7px #FFC328;
+    /* box-shadow:0px 0px 0px 7px #FFC328; */
     z-index: 1;
     cursor:pointer;
 }
@@ -188,8 +188,9 @@ button{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     position: relative;
-    
+    background: url('../img/rectangle.svg');
 }
+
 .offer{
     margin-top: 7%;
     position: relative;
