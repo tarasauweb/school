@@ -54,7 +54,7 @@ button{
     display: flex;
 }
 .img-responsive{
-    position: absolute;
+    position: fixed;
     top: 0;
     right:0;
 }
@@ -173,6 +173,35 @@ button{
     /* box-shadow:0px 0px 0px 7px #FFC328; */
     z-index: 1;
     cursor:pointer;
+    position: relative;
+}
+.offer__play:after{
+    content: ' ';
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    border: 2px solid #EE6666;
+    top:-5px;
+    left:-4px;
+    box-sizing: border-box;
+    animation: playAnim 4s linear infinite;
+
+}
+@keyframes playAnim {
+    0%{
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.2);
+    }
 }
 
 .offer__btn-text{
@@ -189,6 +218,7 @@ button{
     border-bottom-right-radius: 10px;
     position: relative;
     background: url('../img/rectangle.svg');
+
 }
 
 .offer{
@@ -1172,8 +1202,10 @@ button{
     }
     .after__item{
         border:none;
+        padding: 10px 0px;
         border-bottom: 2px solid #fb959578;
     }
+    .plan__title,
     .abstracts__title,
     .rate__title,
     .study__title,
@@ -1182,6 +1214,9 @@ button{
         font-size: 30px;
         line-height: 37px;
         color: #7D7D7D;
+    }
+    .abstracts__title{
+        color:#fff;
     }
     .about-sublocks{
         justify-content: space-around;
