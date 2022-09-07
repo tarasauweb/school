@@ -992,9 +992,13 @@ button{
     .days__block{
         flex-basis: 45%;
     }
+    .more__items{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     .more__item{
-        font-size: 100px;
-        display: block;
+        font-size: 85px;
+        width: auto;
     }
     .help__btns{
         justify-content:space-between;
@@ -1028,7 +1032,9 @@ button{
     .header{
         padding-bottom: 95px;
     }
-    
+    .help__btn{
+        font-size: 15px;
+    }
 }
 
 @media screen and (max-width:576px){
@@ -1085,7 +1091,6 @@ button{
     }
     .help__btn{
         margin-bottom: 30px;
-        width: 100%;
         margin-left: 0;
     }
     .help__block{
@@ -1203,5 +1208,10 @@ button{
     }
     .study__subtitle{
         font-size: 18px;
+    }
+}
+@media screen and (max-width:400px){
+    .help__btn{
+        width: 100%;
     }
 }
