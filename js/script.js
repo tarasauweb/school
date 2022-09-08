@@ -14,16 +14,21 @@ window.addEventListener('load', () => {
         let count = 0
         const slides = document.querySelector('.slides')
         
+        
         const rightMarginForSlide = sizeWindowWidth - container
         const allSlides = document.querySelectorAll('.slide')
         const btnSliderNext = document.querySelector('.next__btn')
         const btnSliderPrev = document.querySelector('.prev__btn')
         const slideWidth = allSlides[0].clientWidth
+        let slideWidthStart = slideWidth
+        if(sizeWindowWidth<1170){
+            slideWidthStart = sizeWindowWidth
+        }
         allSlides.forEach(slide => {
-            slide.style.width = slideWidth + 'px'
+            slide.style.width = slideWidthStart + 'px'
             slide.style.marginRight = rightMarginForSlide + 'px'
         })
-        const numTransletaX = slideWidth + rightMarginForSlide
+        const numTransletaX = slideWidthStart + rightMarginForSlide
         let nowTranslaet = 0
 
         btnSliderNext.addEventListener('click', () => {
@@ -53,6 +58,7 @@ window.addEventListener('load', () => {
         const menu = document.querySelector('.menu')
         const headerHeight = header.clientHeight
         const closeMenu = document.querySelector('.close__menu')
+        const overlay = document.querySelector('.overlay')
         let menuOpen = false
         let sizeChangeMenu = null
         menu.style.height = headerHeight+'px'
@@ -66,9 +72,11 @@ window.addEventListener('load', () => {
         burger.addEventListener('click', ()=>{
             menuOpen = true
             menu.style.transform = `translateX(${0}px)`
+            overlay.style.display = 'block'
         })
         closeMenu.addEventListener('click' , ()=>{
             menuOpen = false
+            overlay.style.display = 'none'
             if(sizeChangeMenu === null){
                 const menuWidth = menu.clientWidth
                 menu.style.transform = `translateX(${menuWidth}px)`
@@ -77,6 +85,17 @@ window.addEventListener('load', () => {
                 menu.style.transform = `translateX(${sizeChangeMenu/2}px)`
             }
             
+        })
+        overlay.addEventListener('click' , ()=>{
+            menuOpen = false
+            overlay.style.display = 'none'
+            if(sizeChangeMenu === null){
+                const menuWidth = menu.clientWidth
+                menu.style.transform = `translateX(${menuWidth}px)`
+            }
+            else{
+                menu.style.transform = `translateX(${sizeChangeMenu/2}px)`
+            }
         })
 
     }
