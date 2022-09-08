@@ -5,6 +5,7 @@ window.addEventListener('load', () => {
     const imgResponsive = document.querySelector('.img-responsive')
     const imgResponsiveClientHeight = imgResponsive.clientHeight
     const header = document.querySelector('.header')
+    const body = document.body
     if (sizeWindowWidth < 576) {
 
         header.style.height = imgResponsiveClientHeight - 4 + 'px'
@@ -71,12 +72,14 @@ window.addEventListener('load', () => {
         }
         burger.addEventListener('click', ()=>{
             menuOpen = true
+            body.style.overflow = 'hidden'
             menu.style.transform = `translateX(${0}px)`
             overlay.style.display = 'block'
         })
         closeMenu.addEventListener('click' , ()=>{
             menuOpen = false
             overlay.style.display = 'none'
+            body.style.overflow = 'visible'
             if(sizeChangeMenu === null){
                 const menuWidth = menu.clientWidth
                 menu.style.transform = `translateX(${menuWidth}px)`
@@ -89,6 +92,7 @@ window.addEventListener('load', () => {
         overlay.addEventListener('click' , ()=>{
             menuOpen = false
             overlay.style.display = 'none'
+            body.style.overflow = 'visible'
             if(sizeChangeMenu === null){
                 const menuWidth = menu.clientWidth
                 menu.style.transform = `translateX(${menuWidth}px)`
