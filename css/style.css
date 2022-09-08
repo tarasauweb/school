@@ -988,7 +988,37 @@ button{
     bottom:0px;
     right:0px;
 }
+.img-inst{
+    width: 44px;
+    height: 44px;
+}
+.slider__link::after{
+    display: block;
+    content: '';
+    width: 35px;
+    height: 35px;
+    border-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #fb9595;
+    position: absolute;
+}
+.slider__link:hover::after{
+    animation: instHover 2s linear infinite;
+}
 
+@keyframes instHover {
+    0%{
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
 /* ----------------------------- */
 
 
