@@ -690,9 +690,9 @@ button{
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
-
     color: #7D7D7D;
 }
+
 
 /* --------------- */
 
@@ -731,7 +731,7 @@ button{
 
 /* study__plan */
 .study__plan{
-    padding:40px 0 60px 0;
+    padding:40px 0 80px 0;
 }
 .plan__title{
     color: #7D7D7D;
@@ -787,6 +787,22 @@ button{
     width: 100%;
     display: flex;
     justify-content: flex-end;
+}
+.study__plan{
+    overflow: hidden;
+    
+}
+.plan{
+    
+    overflow: hidden;
+}
+.container-study{
+    position: relative;
+}
+.plan__btns{
+    position:absolute;
+    right: 10px;
+    bottom:-50px;
 }
 /* ---------------- */
 

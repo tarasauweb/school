@@ -96,6 +96,34 @@ window.addEventListener("load", () => {
       }
     });
   }
+
+  function openAllCourse () {
+    let open = false
+    const sectionCourse = document.querySelector(".plan__blocks")
+    const sectionCourseHeight = sectionCourse.clientHeight
+
+    const allPlanBlock = document.querySelectorAll(".plan__block")
+    const twoHeightPlanBlock = allPlanBlock[0].clientHeight + allPlanBlock[1].clientHeight +20
+
+    sectionCourse.style.height = twoHeightPlanBlock + 'px'
+    const btnSeeAllPlanCourse = document.querySelector('.plan__btn')
+    btnSeeAllPlanCourse.addEventListener('click' , ()=>{
+      if(!open){
+        open = true
+        sectionCourse.style.transition = '0.5s'
+        sectionCourse.style.height = sectionCourseHeight + 'px'
+        btnSeeAllPlanCourse.textContent = 'Свернуть программу'
+      }
+      else{
+        open = false
+        sectionCourse.style.transition = '0.5s'
+        sectionCourse.style.height = twoHeightPlanBlock + 'px'
+        btnSeeAllPlanCourse.textContent = 'Смотреть программу курса'
+      }
+      
+    })
+  }
+
   function openVideo() {
     const video = `<iframe width="560" height="315" src="https://www.youtube.com/embed/lLn2i1GEtQ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="postVideo" enablejsapi=1></iframe>`;
     const play = document.querySelector(".offer__btn");
@@ -114,6 +142,7 @@ window.addEventListener("load", () => {
   }
   
 //   openVideo();
+  openAllCourse ()
   menu();
   slider();
 });
