@@ -110,13 +110,13 @@ window.addEventListener("load", () => {
     btnSeeAllPlanCourse.addEventListener('click' , ()=>{
       if(!open){
         open = true
-        sectionCourse.style.transition = '0.5s'
+        sectionCourse.style.transition = '1.5s'
         sectionCourse.style.height = sectionCourseHeight + 'px'
         btnSeeAllPlanCourse.textContent = 'Свернуть программу'
       }
       else{
         open = false
-        sectionCourse.style.transition = '0.5s'
+        sectionCourse.style.transition = '1.5s'
         sectionCourse.style.height = twoHeightPlanBlock + 'px'
         btnSeeAllPlanCourse.textContent = 'Смотреть программу курса'
       }
@@ -141,7 +141,7 @@ window.addEventListener("load", () => {
     });
   }
   
-//   openVideo();
+  openVideo();
   openAllCourse ()
   menu();
   slider();
