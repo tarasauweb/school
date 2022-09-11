@@ -125,13 +125,14 @@ window.addEventListener("load", () => {
   }
 
   function openVideo() {
-    const video = `<iframe width="560" height="315" src="https://www.youtube.com/embed/tXB3XXBQm_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> enablejsapi=1`;
+    const video = `<iframe width="560" height="315" src="https://www.youtube.com/embed/tXB3XXBQm_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="postVideo" enablejsapi=1></iframe>`;
+    // enablejsapi=1
     // enablejsapi=1
     const play = document.querySelector(".offer__btn");
     const overlay = document.querySelector(".overlay-video");
     play.addEventListener("click", () => {
       overlay.classList.remove("d-n");
-      overlay.insertAdjacentHTML('afterend' , video)
+      overlay.innerHTML = video
     });
     overlay.addEventListener("click", () => {
       overlay.classList.add("d-n");
