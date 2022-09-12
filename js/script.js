@@ -133,13 +133,14 @@ window.addEventListener("load", () => {
     play.addEventListener("click", () => {
       overlay.classList.remove("d-n");
       overlay.innerHTML = video
+      body.style.overflow = 'hidden'
     });
     overlay.addEventListener("click", () => {
       overlay.classList.add("d-n");
       const postVideo = document.querySelector('.postVideo')
       postVideo.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
       postVideo.parentNode.removeChild(postVideo)
-      console.log(postVideo)
+      body.style.overflow = 'visible'
     });
   }
   
