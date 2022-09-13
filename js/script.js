@@ -21,7 +21,12 @@ window.addEventListener("load", () => {
     const slideWidth = allSlides[0].clientWidth;
     const imgSlide = document.querySelectorAll(".img-slide")
     const sliderWidth = slider.clientWidth
+    const allTextSliderDiv = document.querySelectorAll('.slider__all-text')
     let slideWidthStart = sliderWidth;
+    const openAllRewbtn = document.querySelectorAll('.open-all-rew')
+    openAllRewbtn.forEach(item=>{
+      item.classList.add('d-n')
+    })
     if(sizeWindowWidth<1440 && sizeWindowWidth>992){
       
       const procentsDecrementSizeWindow = Math.floor(-(100*(sizeWindowWidth/1440-1)))
@@ -30,11 +35,57 @@ window.addEventListener("load", () => {
       imgSlide.forEach(item=>{
         item.style.width = sizeImgAfterDecWindow + 'px'
       })
-      slider.style.height = imgSlide[0].clientHeight + 20 + 'px'
+      slider.style.height = slides.clientHeight + 20 + 'px'
       console.log(container)
     }
 
     console.log(slideWidthStart)
+    const standartSizeSliderHeight = slider.clientHeight
+    let isOpenRew = false
+    if(sizeWindowWidth<=992){
+      const procentsDecrementSizeWindow = Math.floor(-(100*(sizeWindowWidth/1440-1)))
+      const startWidthImgSlide = imgSlide[0].clientWidth
+      const sizeImgAfterDecWindow = startWidthImgSlide - (startWidthImgSlide/100*procentsDecrementSizeWindow)
+      if(sizeWindowWidth>576){
+        imgSlide.forEach(item=>{
+          item.style.width = sizeImgAfterDecWindow + 'px'
+        })
+      }
+      
+      allTextSliderDiv.forEach((item,index)=>{
+        item.setAttribute('data-text' , index)
+        item.classList.add('d-n')
+      })
+      openAllRewbtn.forEach((item,index)=>{
+        item.setAttribute('data-text' , index)
+        item.classList.remove('d-n')
+      })
+      
+      for(let i = 0 ;i<openAllRewbtn.length;i++){
+        openAllRewbtn[i].addEventListener('click' , function(){
+          
+          slider.style.height = standartSizeSliderHeight + 'px'
+          allTextSliderDiv[i].classList.add('d-n')
+          if(this.getAttribute('data-text') === allTextSliderDiv[i].getAttribute('data-text')){
+            if(!isOpenRew){
+              console.log('false')
+              isOpenRew = true
+              allTextSliderDiv[i].classList.remove('d-n')
+              const sizeheightSliderAllText =  allTextSliderDiv[i].clientHeight
+              slider.style.height = standartSizeSliderHeight + sizeheightSliderAllText + 'px'
+              openAllRewbtn[i].textContent = 'скрыть полный отзыв'
+            }
+            else{
+              allTextSliderDiv[i].classList.add('d-n')
+              isOpenRew = false
+              slider.style.height = standartSizeSliderHeight + 'px'
+              openAllRewbtn[i].textContent = 'читать полный отзыв'
+            }
+            
+          }
+        })
+      }
+    }
     allSlides.forEach((slide) => {
       if(slideWidthStart>container){
         slideWidthStart = container
@@ -50,6 +101,15 @@ window.addEventListener("load", () => {
     let nowTranslaet = 0;
 
     btnSliderNext.addEventListener("click", () => {
+      if(sizeWindowWidth<=992){
+        slider.style.height = standartSizeSliderHeight + 'px'
+        for(let i = 0 ; i <allTextSliderDiv.length;i++){
+          allTextSliderDiv[i].classList.add('d-n')
+          openAllRewbtn[i].textContent = 'читать полный отзыв'
+        }
+        isOpenRew = false
+      }
+      
       count++;
       nowTranslaet = nowTranslaet - numTransletaX;
       if (count >= allSlides.length) {
@@ -59,12 +119,25 @@ window.addEventListener("load", () => {
       slides.style.transform = `translateX(${nowTranslaet}px)`;
     });
     btnSliderPrev.addEventListener("click", () => {
+      if(sizeWindowWidth<=992){
+        slider.style.height = standartSizeSliderHeight + 'px'
+        for(let i = 0 ; i <allTextSliderDiv.length;i++){
+          allTextSliderDiv[i].classList.add('d-n')
+          openAllRewbtn[i].textContent = 'читать полный отзыв'
+        }
+        isOpenRew = false
+      }
       count--;
       nowTranslaet = nowTranslaet + numTransletaX;
-      if (count <= 0) {
-        count = allSlides.length;
+      
+      console.log(numTransletaX)
+      
+      if (count < 0) {
+        count = allSlides.length-1;
         nowTranslaet = -numTransletaX * (allSlides.length - 1);
       }
+      
+      
       slides.style.transform = `translateX(${nowTranslaet}px)`;
     });
   }
