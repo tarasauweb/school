@@ -13,19 +13,38 @@ window.addEventListener("load", () => {
   function slider() {
     let count = 0;
     const slides = document.querySelector(".slides");
-
-    const rightMarginForSlide = sizeWindowWidth - container;
+    const slider = document.querySelector(".slider")
+    let rightMarginForSlide = sizeWindowWidth - container;
     const allSlides = document.querySelectorAll(".slide");
     const btnSliderNext = document.querySelector(".next__btn");
     const btnSliderPrev = document.querySelector(".prev__btn");
     const slideWidth = allSlides[0].clientWidth;
-    let slideWidthStart = slideWidth;
-    if (sizeWindowWidth < 1170) {
-      slideWidthStart = sizeWindowWidth;
+    const imgSlide = document.querySelectorAll(".img-slide")
+    const sliderWidth = slider.clientWidth
+    let slideWidthStart = sliderWidth;
+    if(sizeWindowWidth<1440 && sizeWindowWidth>992){
+      
+      const procentsDecrementSizeWindow = Math.floor(-(100*(sizeWindowWidth/1440-1)))
+      const startWidthImgSlide = imgSlide[0].clientWidth
+      const sizeImgAfterDecWindow = startWidthImgSlide - (startWidthImgSlide/100*procentsDecrementSizeWindow)
+      imgSlide.forEach(item=>{
+        item.style.width = sizeImgAfterDecWindow + 'px'
+      })
+      slider.style.height = imgSlide[0].clientHeight + 20 + 'px'
+      console.log(container)
     }
+
+    console.log(slideWidthStart)
     allSlides.forEach((slide) => {
+      if(slideWidthStart>container){
+        slideWidthStart = container
+      }
       slide.style.width = slideWidthStart + "px";
+      if(rightMarginForSlide <=0){
+        rightMarginForSlide = 20
+      }
       slide.style.marginRight = rightMarginForSlide + "px";
+      
     });
     const numTransletaX = slideWidthStart + rightMarginForSlide;
     let nowTranslaet = 0;
