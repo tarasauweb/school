@@ -1677,10 +1677,27 @@ button{
         font-size: 14px;
     }
     
-    
+    .offer-m__span{
+        display: block;
+        font-size: 10px;
+        position: absolute;
+        top:-80px;
+        transform: rotate(-30deg);
+        left: 29.87px;
+        opacity: 0.8;
+    }
+    .offer__title{
+        position: relative;
+    }
     
 }
+@media screen and (max-width:485px){
+    .offer-m__span{
+        top:-40px;
+    }
+}
 @media screen and (max-width:400px){
+    
     .after__title,
     .study__title,
     .rate__title{
