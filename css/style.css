@@ -1708,7 +1708,7 @@ button{
     }
     .rate__block{
         width: 100%;
-        padding:10px;
+        padding:30px 10px 10px 10px;
     }
 }
 .menu{
