@@ -1,6 +1,5 @@
 window.addEventListener("load", () => {
   const sizeWindowWidth = document.documentElement.clientWidth;
-  const sizeWindowHeigth = document.documentElement.clientHeight;
   const container = document.querySelector(".container").clientWidth;
   const imgResponsive = document.querySelector(".img-responsive");
   const imgResponsiveClientHeight = imgResponsive.clientHeight;
@@ -9,7 +8,6 @@ window.addEventListener("load", () => {
   if (sizeWindowWidth < 576) {
     header.style.height = imgResponsiveClientHeight - 4 + "px";
   }
-
   function slider() {
     let count = 0;
     const slides = document.querySelector(".slides");
@@ -28,7 +26,6 @@ window.addEventListener("load", () => {
       item.classList.add('d-n')
     })
     if(sizeWindowWidth<1440 && sizeWindowWidth>992){
-      
       const procentsDecrementSizeWindow = Math.floor(-(100*(sizeWindowWidth/1440-1)))
       const startWidthImgSlide = imgSlide[0].clientWidth
       const sizeImgAfterDecWindow = startWidthImgSlide - (startWidthImgSlide/100*procentsDecrementSizeWindow)
@@ -38,8 +35,6 @@ window.addEventListener("load", () => {
       slider.style.height = slides.clientHeight + 20 + 'px'
       console.log(container)
     }
-
-    console.log(slideWidthStart)
     const standartSizeSliderHeight = slider.clientHeight
     let isOpenRew = false
     if(sizeWindowWidth<=992){
@@ -51,7 +46,6 @@ window.addEventListener("load", () => {
           item.style.width = sizeImgAfterDecWindow + 'px'
         })
       }
-      
       allTextSliderDiv.forEach((item,index)=>{
         item.setAttribute('data-text' , index)
         item.classList.add('d-n')
@@ -60,10 +54,8 @@ window.addEventListener("load", () => {
         item.setAttribute('data-text' , index)
         item.classList.remove('d-n')
       })
-      
       for(let i = 0 ;i<openAllRewbtn.length;i++){
         openAllRewbtn[i].addEventListener('click' , function(){
-          
           slider.style.height = standartSizeSliderHeight + 'px'
           allTextSliderDiv[i].classList.add('d-n')
           if(this.getAttribute('data-text') === allTextSliderDiv[i].getAttribute('data-text')){
@@ -81,7 +73,6 @@ window.addEventListener("load", () => {
               slider.style.height = standartSizeSliderHeight + 'px'
               openAllRewbtn[i].textContent = 'читать полный отзыв'
             }
-            
           }
         })
       }
@@ -95,7 +86,6 @@ window.addEventListener("load", () => {
         rightMarginForSlide = 20
       }
       slide.style.marginRight = rightMarginForSlide + "px";
-      
     });
     const numTransletaX = slideWidthStart + rightMarginForSlide;
     let nowTranslaet = 0;
@@ -109,7 +99,6 @@ window.addEventListener("load", () => {
         }
         isOpenRew = false
       }
-      
       count++;
       nowTranslaet = nowTranslaet - numTransletaX;
       if (count >= allSlides.length) {
@@ -129,19 +118,13 @@ window.addEventListener("load", () => {
       }
       count--;
       nowTranslaet = nowTranslaet + numTransletaX;
-      
-      console.log(numTransletaX)
-      
       if (count < 0) {
         count = allSlides.length-1;
         nowTranslaet = -numTransletaX * (allSlides.length - 1);
       }
-      
-      
       slides.style.transform = `translateX(${nowTranslaet}px)`;
     });
   }
-
   function menu() {
     const burger = document.querySelector(".burger");
     const sizeChange = sizeWindowWidth - container;
@@ -188,15 +171,12 @@ window.addEventListener("load", () => {
       }
     });
   }
-
   function openAllCourse () {
     let open = false
     const sectionCourse = document.querySelector(".plan__blocks")
     const sectionCourseHeight = sectionCourse.clientHeight
-
     const allPlanBlock = document.querySelectorAll(".plan__block")
     const twoHeightPlanBlock = allPlanBlock[0].clientHeight + allPlanBlock[1].clientHeight +20
-
     sectionCourse.style.height = twoHeightPlanBlock + 'px'
     const btnSeeAllPlanCourse = document.querySelector('.plan__btn')
     btnSeeAllPlanCourse.addEventListener('click' , ()=>{
@@ -212,14 +192,10 @@ window.addEventListener("load", () => {
         sectionCourse.style.height = twoHeightPlanBlock + 'px'
         btnSeeAllPlanCourse.textContent = 'Смотреть программу курса'
       }
-      
     })
   }
-
   function openVideo() {
     const video = `<iframe width="560" height="315" src="https://www.youtube.com/embed/tXB3XXBQm_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="postVideo" enablejsapi=1></iframe>`;
-    // enablejsapi=1
-    // enablejsapi=1
     const play = document.querySelector(".offer__btn");
     const overlay = document.querySelector(".overlay-video");
     play.addEventListener("click", () => {
@@ -235,7 +211,6 @@ window.addEventListener("load", () => {
       body.style.overflow = 'visible'
     });
   }
-  
   openVideo();
   openAllCourse ()
   menu();
