@@ -261,6 +261,13 @@ button{
     -ms-transform:rotate(180deg);
     -o-transform:rotate(180deg);
 }
+.postVideo{
+    position: absolute;
+    z-index: 5;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
 /* ----------------- */
 
 /* about-course */
@@ -1568,6 +1575,10 @@ button{
     .slide__text{
         margin-bottom: 20px;
     }
+    .postVideo{
+        width: 100%;
+        
+    }
     
 }
 @media screen and (max-width:400px){
@@ -1732,10 +1743,4 @@ button{
     top:0;
     left:0;
 }
-.postVideo{
-    position: absolute;
-    z-index: 5;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-}
+
