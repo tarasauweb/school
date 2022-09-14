@@ -184,6 +184,10 @@ button{
     cursor:pointer;
     position: relative;
 }
+.offer-m__span{
+    text-transform: uppercase;
+    font-size: 30px;
+}
 .offer__play:after{
     content: ' ';
     display: block;
