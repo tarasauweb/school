@@ -1,0 +1,44 @@
+/* about-course */
+.about-course{
+    margin-top: 20px;
+}
+.about__div{
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 73px;
+    color: #E4DCD7;
+    height: auto;
+}
+.about-sublock{
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.about-sublocks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.about__span{
+    color: #676566;
+    font-family: 'Lora';
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 174.9%;
+    max-width: 234px;
+    padding:20px;
+    height: 66px;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    text-align: center;
+    margin-top: -15px;
+    
+}
+.course__puzzle{
+    width: 86.92px;
+    height: 79.08px;
+}

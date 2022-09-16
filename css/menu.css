@@ -1,0 +1,137 @@
+.menu{
+    position:fixed;
+    top:0;
+    right: 0;
+    width: 259px;
+    height: 580px;
+    background: #ffffff;
+    border-radius: 15px 0px 0px 15px;
+    transform:translateX(260px);
+    -webkit-transform:translateX(260px);
+    -moz-transform:translateX(260px);
+    -ms-transform:translateX(260px);
+    -o-transform:translateX(260px);
+    transition: 0.5s;
+}
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    /* background-color: #44424256; */
+    background-color: transparent;
+    display: none;
+}
+.menu__link{
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    display: inline-block;
+    color: #7D7D7D;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.menu__link::after{
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0px;
+    background-color: #7D7D7D;
+    margin-top: 5px;
+    transition: 0.5s;
+}
+.menu__link:hover::after{
+    width: 100%;
+    transition: 0.5s;
+}
+.menu__items{
+    padding:54px;
+    margin-top: 30px;
+}
+.menu__item{
+    list-style:none;
+    margin-bottom: 10px;
+}
+
+.menu__net{
+    display: flex;
+    align-items: center;
+    justify-content:start;
+    margin-left: 54px;
+    margin-top: 60px;
+}
+.menu__netItem{
+    margin-right: 30px;
+}
+.menu__netLinks{
+    width: 27px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.menu__netLinks::after{
+    width: 20px;
+    height: 20px;
+    content: '';
+    display: block;
+    background-color: transparent;
+    border: 1px solid #EE6666;
+    border-radius: 5px;
+    position: absolute;
+    left:2.2px;
+    transform: 0.5s;
+    opacity: 0;
+}
+.insta-net::after{
+    border-color: #f12e80;
+}
+.telegram-net::after{
+    border-color: #0088cc;
+}
+.youtube-net::after{
+    border-color: #ee6666;
+}
+.menu__netLinks:hover::after{
+    animation: animNetSvg 2s linear infinite;
+}
+
+.svg__net{
+    width: 27px;
+    height: 27px;
+}
+.close__line{
+    width: 30px;
+    height: 2px;
+    background-color: #676566;
+    display: block;
+}
+.close__menu{
+    position: absolute;
+    top:40px;
+    right:40px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.close__top{
+    transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+}
+.close__bottom{
+    transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    margin-top: -2px;
+}

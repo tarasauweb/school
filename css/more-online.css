@@ -1,0 +1,30 @@
+/* more__online */
+
+.more__online{
+    background: #EBE6E3;
+    padding:40px 0;
+}
+.online{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.online__block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.online__text{
+    margin-top: 15px;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #7D7D7D;
+}
+.online__img{
+    width: 110px;
+    height: auto;
+}

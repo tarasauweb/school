@@ -1,0 +1,48 @@
+/* after-course */
+
+.after-course{
+    padding-top: 60px;
+    padding-bottom:55px;
+}
+.after__title{
+    color: #E4DCD7;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 73px;
+}
+.after__item_one{
+    border-bottom: 2px solid #fb959578;
+    border-right: 2px solid #fb959578;
+}
+.after__item_two{
+    border-bottom: 2px solid #fb959578;
+}
+.after__subtitle{
+    color: #7D7D7D;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+}
+.after__text{
+    color: #7D7D7D;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+.after__items{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.after__item{
+    padding: 10px;
+    flex-basis: 49%;
+}
+.after__text{
+    margin-top: 15px;
+}
+.after__item_three{
+    border-right: 2px solid #fb959578;
+}

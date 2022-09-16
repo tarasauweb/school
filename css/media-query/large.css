@@ -1,0 +1,32 @@
+@media screen and (max-width:1440px){
+    .img-slide{
+        height: auto;
+    }
+    .slide__left{
+        width: 50%;
+    }
+    
+    /* .slide{
+        justify-content: space-around;
+    } */
+    .slider-container{
+        padding: 0;
+    }
+}
+
+@media screen and (max-width:1100px){
+
+    .abstracts__img{
+        width: 25%;
+        height: auto;
+    }
+    .abstracts__imgs{
+        width: 100%;
+    }
+    .about-sublocks{
+        justify-content: space-around;
+    }
+    .about-sublock{
+        margin-bottom: 50px;
+    }
+}
