@@ -68,6 +68,8 @@
     border:3px solid #EE6666;
     border-radius:10px;
     margin-left: 10px;
+    position: relative;
+    overflow: hidden;
 }
 .help__btn:hover{
     background-color: #EE6666;
@@ -78,3 +80,22 @@
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
 }
+.help__btn::after{
+    content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+  transform: rotateZ(60deg) translate(-5em, 7.5em);
+}
+.help__btn:hover::after{
+    animation: sheenBtn 1s forwards;
+    -webkit-animation: sheenBtn 1s forwards;
+}
+@keyframes sheenBtn {
+    100% {
+      transform: rotateZ(60deg) translate(1em, -9em);
+    }
+  }
