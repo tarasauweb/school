@@ -137,10 +137,12 @@
     z-index: 1;
     cursor:pointer;
     position: relative;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .offer-m__span{
     text-transform: uppercase;
     font-size: 30px;
+    
 }
 .offer__play:after{
     content: ' ';
@@ -174,6 +176,7 @@
     position: relative;
     background: url('../img/rectangle.svg');
     overflow:hidden;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .offer__btn-text::after{
     content: '';
