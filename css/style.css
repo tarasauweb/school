@@ -1,6 +1,10 @@
 @import url('normalize.css');
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Montserrat:wght@100;400;600;700;900&display=swap');
 
+
+html{
+    scroll-behavior: smooth;
+}
 *{
     padding: 0;
     margin: 0;
@@ -1869,3 +1873,79 @@ button{
     left:0;
 }
 
+.up-btn{
+    position: fixed;
+    z-index: 1;
+    right:-100px;
+    
+    bottom:20px;
+    transform:rotate(90deg);
+    -webkit-transform:;
+    -moz-transform:;
+    -ms-transform:;
+    -o-transform:;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding:10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFC328;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+.up-btn-img{
+    width: 35px;
+    height: 35px;
+    display: block;
+}
+.up-btn-show{
+    right: 20px;
+    transition: 0.5s;
+}
+.up-btn::after{
+    display: block;
+    content: "";
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: transparent;
+    border:1px solid #FFC328;
+    z-index: 0;
+}
+.up-btn-active::after{
+    animation: upBtn 0.5s linear ;
+    -webkit-animation: upBtn 0.5s linear ;
+}
+@keyframes upBtn {
+    0%{
+        opacity: 0;
+        transform: scale(1)    ;
+        -webkit-transform: scale(1)    ;
+        -moz-transform: scale(1)    ;
+        -ms-transform: scale(1)    ;
+        -o-transform: scale(1)    ;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(2.5);
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+        -moz-transform: scale(2.5);
+        -ms-transform: scale(2.5);
+        -o-transform: scale(2.5);
+    }
+}

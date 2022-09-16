@@ -33,7 +33,6 @@ window.addEventListener("load", () => {
         item.style.width = sizeImgAfterDecWindow + 'px'
       })
       slider.style.height = slides.clientHeight + 20 + 'px'
-      console.log(container)
     }
     const standartSizeSliderHeight = slider.clientHeight
     let isOpenRew = false
@@ -215,4 +214,26 @@ window.addEventListener("load", () => {
   openAllCourse ()
   menu();
   slider();
+  
+  const upBtn = document.querySelector(".up-btn");
+  upBtn.addEventListener('click' , ()=>{
+    upBtn.classList.add('up-btn-active')
+  })
+  upBtn.addEventListener('click' , () => {
+    upBtn.classList.add('up-btn-active')
+  })
+  window.addEventListener('scroll', () => {
+    
+    if(sizeWindowWidth>992){
+      if(pageYOffset>=500){
+        upBtn.classList.add('up-btn-show')
+      }
+      else{
+        upBtn.classList.remove('up-btn-show')
+        upBtn.classList.remove('up-btn-active')
+      }
+    }
+    
+  })
+  
 });
