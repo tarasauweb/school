@@ -54,7 +54,7 @@
 .help__btns{
     display: flex;
     justify-content: flex-end;
-    margin-top: 50px;
+    margin-top: 35px;
 }
 .help__btn{
     font-weight: 700;
@@ -93,6 +93,10 @@
 .help__btn:hover::after{
     animation: sheenBtn 1s forwards;
     -webkit-animation: sheenBtn 1s forwards;
+}
+.help-2-btn{
+    background-color: #EE6666;
+    color: #fff;
 }
 @keyframes sheenBtn {
     100% {

@@ -51,8 +51,11 @@
         align-items: center;
     }
     .help__btn{
-        margin-bottom: 30px;
+        margin-bottom: 0px;
         margin-left: 0;
+    }
+    .help__btn:last-child{
+        margin-top: 15px;
     }
     .help__block{
         width: 100%;
@@ -61,7 +64,11 @@
     }
     .for-help{
         margin: 0;
-        
+        padding-bottom: 40px;
+    }
+    .for-life,
+    .in-days{
+        padding-bottom: 40px;
     }
     .days__blocks{
         display: block;

@@ -63,32 +63,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.circle-1{
-    width: 338px;
-    height: 338px;
-    background: transparent;
-    border: 1px solid #FFFFFF;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    position:absolute;
-    top:50%;
-    transform: translate(0, -50%);
-    -webkit-transform: translate(0, -50%);
-    -moz-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    -o-transform: translate(0, -50%);
-    left: 90px;
-}
-.circle-3{
-    width: 610px;
-    height: 610px;
-    left:-40px;
-}
-.circle-2{
-    width: 500px;
-    height: 500px;
-    left:10px;
+.days__btns{
+    margin-top: 10px;
 }
