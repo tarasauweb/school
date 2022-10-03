@@ -70,6 +70,10 @@
     margin-left: 10px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 .help__btn:hover{
     background-color: #EE6666;
