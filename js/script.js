@@ -158,6 +158,20 @@ window.addEventListener("load", () => {
         menu.style.transform = `translateX(${sizeChangeMenu / 2}px)`;
       }
     });
+    const allLinkMenu = document.querySelectorAll('.menu__link')
+    allLinkMenu.forEach(item=>{
+        item.addEventListener('click' , ()=>{
+          menuOpen = false;
+      overlay.style.display = "none";
+      body.style.overflow = "visible";
+      if (sizeChangeMenu === null) {
+        const menuWidth = menu.clientWidth;
+        menu.style.transform = `translateX(${menuWidth}px)`;
+      } else {
+        menu.style.transform = `translateX(${sizeChangeMenu / 2}px)`;
+      }
+        })
+    })
     overlay.addEventListener("click", () => {
       menuOpen = false;
       overlay.style.display = "none";
