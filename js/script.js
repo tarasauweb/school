@@ -22,51 +22,50 @@ window.addEventListener("load", () => {
     const allTextSliderDiv = document.querySelectorAll('.slider__all-text')
     let slideWidthStart = sliderWidth;
     const openAllRewbtn = document.querySelectorAll('.open-all-rew')
-    openAllRewbtn.forEach(item=>{
+    openAllRewbtn.forEach(item => {
       item.classList.add('d-n')
     })
-    if(sizeWindowWidth<1440 && sizeWindowWidth>992){
-      const procentsDecrementSizeWindow = Math.floor(-(100*(sizeWindowWidth/1440-1)))
+    if (sizeWindowWidth < 1440 && sizeWindowWidth > 992) {
+      const procentsDecrementSizeWindow = Math.floor(-(100 * (sizeWindowWidth / 1440 - 1)))
       const startWidthImgSlide = imgSlide[0].clientWidth
-      const sizeImgAfterDecWindow = startWidthImgSlide - (startWidthImgSlide/100*procentsDecrementSizeWindow)
-      imgSlide.forEach(item=>{
+      const sizeImgAfterDecWindow = startWidthImgSlide - (startWidthImgSlide / 100 * procentsDecrementSizeWindow)
+      imgSlide.forEach(item => {
         item.style.width = sizeImgAfterDecWindow + 'px'
       })
       slider.style.height = slides.clientHeight + 20 + 'px'
     }
     const standartSizeSliderHeight = slider.clientHeight
     let isOpenRew = false
-    if(sizeWindowWidth<=992){
-      const procentsDecrementSizeWindow = Math.floor(-(100*(sizeWindowWidth/1440-1)))
+    if (sizeWindowWidth <= 992) {
+      const procentsDecrementSizeWindow = Math.floor(-(100 * (sizeWindowWidth / 1440 - 1)))
       const startWidthImgSlide = imgSlide[0].clientWidth
-      const sizeImgAfterDecWindow = startWidthImgSlide - (startWidthImgSlide/100*procentsDecrementSizeWindow)
-      if(sizeWindowWidth>576){
-        imgSlide.forEach(item=>{
+      const sizeImgAfterDecWindow = startWidthImgSlide - (startWidthImgSlide / 100 * procentsDecrementSizeWindow)
+      if (sizeWindowWidth > 576) {
+        imgSlide.forEach(item => {
           item.style.width = sizeImgAfterDecWindow + 'px'
         })
       }
-      allTextSliderDiv.forEach((item,index)=>{
-        item.setAttribute('data-text' , index)
+      allTextSliderDiv.forEach((item, index) => {
+        item.setAttribute('data-text', index)
         item.classList.add('d-n')
       })
-      openAllRewbtn.forEach((item,index)=>{
-        item.setAttribute('data-text' , index)
+      openAllRewbtn.forEach((item, index) => {
+        item.setAttribute('data-text', index)
         item.classList.remove('d-n')
       })
-      for(let i = 0 ;i<openAllRewbtn.length;i++){
-        openAllRewbtn[i].addEventListener('click' , function(){
+      for (let i = 0; i < openAllRewbtn.length; i++) {
+        openAllRewbtn[i].addEventListener('click', function () {
           slider.style.height = standartSizeSliderHeight + 'px'
           allTextSliderDiv[i].classList.add('d-n')
-          if(this.getAttribute('data-text') === allTextSliderDiv[i].getAttribute('data-text')){
-            if(!isOpenRew){
-              console.log('false')
+          if (this.getAttribute('data-text') === allTextSliderDiv[i].getAttribute('data-text')) {
+            if (!isOpenRew) {
               isOpenRew = true
               allTextSliderDiv[i].classList.remove('d-n')
-              const sizeheightSliderAllText =  allTextSliderDiv[i].clientHeight
+              const sizeheightSliderAllText = allTextSliderDiv[i].clientHeight
               slider.style.height = standartSizeSliderHeight + sizeheightSliderAllText + 'px'
               openAllRewbtn[i].textContent = 'скрыть полный отзыв'
             }
-            else{
+            else {
               allTextSliderDiv[i].classList.add('d-n')
               isOpenRew = false
               slider.style.height = standartSizeSliderHeight + 'px'
@@ -77,11 +76,11 @@ window.addEventListener("load", () => {
       }
     }
     allSlides.forEach((slide) => {
-      if(slideWidthStart>container){
+      if (slideWidthStart > container) {
         slideWidthStart = container
       }
       slide.style.width = slideWidthStart + "px";
-      if(rightMarginForSlide <=0){
+      if (rightMarginForSlide <= 0) {
         rightMarginForSlide = 20
       }
       slide.style.marginRight = rightMarginForSlide + "px";
@@ -90,9 +89,9 @@ window.addEventListener("load", () => {
     let nowTranslaet = 0;
 
     btnSliderNext.addEventListener("click", () => {
-      if(sizeWindowWidth<=992){
+      if (sizeWindowWidth <= 992) {
         slider.style.height = standartSizeSliderHeight + 'px'
-        for(let i = 0 ; i <allTextSliderDiv.length;i++){
+        for (let i = 0; i < allTextSliderDiv.length; i++) {
           allTextSliderDiv[i].classList.add('d-n')
           openAllRewbtn[i].textContent = 'читать полный отзыв'
         }
@@ -107,9 +106,9 @@ window.addEventListener("load", () => {
       slides.style.transform = `translateX(${nowTranslaet}px)`;
     });
     btnSliderPrev.addEventListener("click", () => {
-      if(sizeWindowWidth<=992){
+      if (sizeWindowWidth <= 992) {
         slider.style.height = standartSizeSliderHeight + 'px'
-        for(let i = 0 ; i <allTextSliderDiv.length;i++){
+        for (let i = 0; i < allTextSliderDiv.length; i++) {
           allTextSliderDiv[i].classList.add('d-n')
           openAllRewbtn[i].textContent = 'читать полный отзыв'
         }
@@ -118,7 +117,7 @@ window.addEventListener("load", () => {
       count--;
       nowTranslaet = nowTranslaet + numTransletaX;
       if (count < 0) {
-        count = allSlides.length-1;
+        count = allSlides.length - 1;
         nowTranslaet = -numTransletaX * (allSlides.length - 1);
       }
       slides.style.transform = `translateX(${nowTranslaet}px)`;
@@ -137,7 +136,6 @@ window.addEventListener("load", () => {
     if (sizeWindowWidth > 1450) {
       const menuWidth = menu.clientWidth;
       sizeChangeMenu = menuWidth + sizeChange;
-      console.log(sizeChangeMenu);
       menu.style.width = sizeChangeMenu / 2 + "px";
       menu.style.transform = `translateX(${sizeChangeMenu}px)`;
     }
@@ -159,18 +157,18 @@ window.addEventListener("load", () => {
       }
     });
     const allLinkMenu = document.querySelectorAll('.menu__link')
-    allLinkMenu.forEach(item=>{
-        item.addEventListener('click' , ()=>{
-          menuOpen = false;
-      overlay.style.display = "none";
-      body.style.overflow = "visible";
-      if (sizeChangeMenu === null) {
-        const menuWidth = menu.clientWidth;
-        menu.style.transform = `translateX(${menuWidth}px)`;
-      } else {
-        menu.style.transform = `translateX(${sizeChangeMenu / 2}px)`;
-      }
-        })
+    allLinkMenu.forEach(item => {
+      item.addEventListener('click', () => {
+        menuOpen = false;
+        overlay.style.display = "none";
+        body.style.overflow = "visible";
+        if (sizeChangeMenu === null) {
+          const menuWidth = menu.clientWidth;
+          menu.style.transform = `translateX(${menuWidth}px)`;
+        } else {
+          menu.style.transform = `translateX(${sizeChangeMenu / 2}px)`;
+        }
+      })
     })
     overlay.addEventListener("click", () => {
       menuOpen = false;
@@ -184,22 +182,22 @@ window.addEventListener("load", () => {
       }
     });
   }
-  function openAllCourse () {
+  function openAllCourse() {
     let open = false
     const sectionCourse = document.querySelector(".plan__blocks")
     const sectionCourseHeight = sectionCourse.clientHeight
     const allPlanBlock = document.querySelectorAll(".plan__block")
-    const twoHeightPlanBlock = allPlanBlock[0].clientHeight + allPlanBlock[1].clientHeight +20
+    const twoHeightPlanBlock = allPlanBlock[0].clientHeight + allPlanBlock[1].clientHeight + 20
     sectionCourse.style.height = twoHeightPlanBlock + 'px'
     const btnSeeAllPlanCourse = document.querySelector('.plan__btn')
-    btnSeeAllPlanCourse.addEventListener('click' , ()=>{
-      if(!open){
+    btnSeeAllPlanCourse.addEventListener('click', () => {
+      if (!open) {
         open = true
         sectionCourse.style.transition = '1.5s'
         sectionCourse.style.height = sectionCourseHeight + 'px'
         btnSeeAllPlanCourse.textContent = 'Свернуть программу'
       }
-      else{
+      else {
         open = false
         sectionCourse.style.transition = '1.5s'
         sectionCourse.style.height = twoHeightPlanBlock + 'px'
@@ -225,29 +223,29 @@ window.addEventListener("load", () => {
     });
   }
   openVideo();
-  openAllCourse ()
+  openAllCourse()
   menu();
   slider();
-  
+
   const upBtn = document.querySelector(".up-btn");
-  upBtn.addEventListener('click' , ()=>{
+  upBtn.addEventListener('click', () => {
     upBtn.classList.add('up-btn-active')
   })
-  upBtn.addEventListener('click' , () => {
+  upBtn.addEventListener('click', () => {
     upBtn.classList.add('up-btn-active')
   })
   window.addEventListener('scroll', () => {
-    
-    if(sizeWindowWidth>992){
-      if(pageYOffset>=500){
+
+    if (sizeWindowWidth > 992) {
+      if (pageYOffset >= 500) {
         upBtn.classList.add('up-btn-show')
       }
-      else{
+      else {
         upBtn.classList.remove('up-btn-show')
         upBtn.classList.remove('up-btn-active')
       }
     }
-    
+
   })
-  
+
 });
