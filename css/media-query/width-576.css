@@ -251,6 +251,34 @@
     .offer__title{
         position: relative;
     }
+    .footer__links{
+        margin-top: 0;
+    }
+    .footer__line{
+        display: none;
+    }
+    .footer__net-links{
+        border-bottom: 2px solid rgba(125, 125, 125, 1);
+        padding-bottom: 10px;
+        
+    }
+    .footer__items{
+        flex-direction: column;
+    }
+    .offer_links{
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        margin-top: 20px;
+    }
+    /* .footer_allitem_1{
+        display: flex;
+        justify-content:center;
+        width: 100%;
+    } */
+    .footer__net-links{
+        width: 100%;
+    }
     
 }
 @media screen and (max-width:485px){

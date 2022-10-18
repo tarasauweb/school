@@ -22,6 +22,8 @@
 @import url('my-reviews.css');
 @import url('my-rate.css');
 
+@import url('./footer.css');
+
 /* Media query */
 
 @import url('./media-query/all-query.css');
