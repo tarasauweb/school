@@ -248,4 +248,36 @@ window.addEventListener("load", () => {
 
   })
 
+  function callForms(){
+    const container = document.querySelectorAll('.container')
+    const overlayForms = document.querySelector('.overlay-forms')
+    const sectionRateClientHeight = document.querySelector('.my-rate').clientHeight
+    if(container[0].clientWidth<=768){
+      overlayForms.style.height = sectionRateClientHeight + 'px'
+    }
+    const buyRecBtn = document.querySelector("#buy-rec")
+    const buyStudyBtn = document.querySelector("#buy-study")
+    buyRecBtn.addEventListener('click' , ()=>{
+     
+      const modal = document.querySelector('.modal-rec')
+      overlayForms.classList.add('modal-active')
+      modal.classList.add('modal-active')
+      overlayForms.addEventListener('click' , ()=>{
+        overlayForms.classList.remove('modal-active')
+        modal.classList.remove('modal-active')
+        document.body.style.overflow = 'visible'
+      })
+    })
+    buyStudyBtn.addEventListener('click' , ()=>{
+      const modal = document.querySelector('.modal-study')
+      overlayForms.classList.add('modal-active')
+      modal.classList.add('modal-active')
+      overlayForms.addEventListener('click' , ()=>{
+        overlayForms.classList.remove('modal-active')
+        modal.classList.remove('modal-active')
+        document.body.style.overflow = 'visible'
+      })
+    })
+  }
+  callForms()
 });

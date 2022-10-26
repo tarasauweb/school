@@ -77,11 +77,15 @@
     .slider__link::after{
         display: none;
     }
-    abstracts__img:hover{
+    .abstracts__img:hover{
         transform: scale(1);
         -webkit-transform: scale(1);
         -moz-transform: scale(1);
         -ms-transform: scale(1);
         -o-transform: scale(1);
-}
+    }
+    .modal-study,
+    .modal-rec{
+        width: 95%;
+    }
 }
