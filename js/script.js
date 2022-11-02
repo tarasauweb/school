@@ -205,24 +205,24 @@ window.addEventListener("load", () => {
       }
     })
   }
-  function openVideo() {
-    const video = `<iframe width="560" height="315" src="https://www.youtube.com/embed/tXB3XXBQm_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="postVideo" enablejsapi=1></iframe>`;
-    const play = document.querySelector(".offer__btn");
-    const overlay = document.querySelector(".overlay-video");
-    play.addEventListener("click", () => {
-      overlay.classList.remove("d-n");
-      overlay.innerHTML = video
-      body.style.overflow = 'hidden'
-    });
-    overlay.addEventListener("click", () => {
-      overlay.classList.add("d-n");
-      const postVideo = document.querySelector('.postVideo')
-      postVideo.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-      postVideo.parentNode.removeChild(postVideo)
-      body.style.overflow = 'visible'
-    });
-  }
-  openVideo();
+  // function openVideo() {
+  //   const video = `<iframe width="560" height="315" src="https://www.youtube.com/embed/tXB3XXBQm_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="postVideo" enablejsapi=1></iframe>`;
+  //   const play = document.querySelector(".offer__btn");
+  //   const overlay = document.querySelector(".overlay-video");
+  //   play.addEventListener("click", () => {
+  //     overlay.classList.remove("d-n");
+  //     overlay.innerHTML = video
+  //     body.style.overflow = 'hidden'
+  //   });
+  //   overlay.addEventListener("click", () => {
+  //     overlay.classList.add("d-n");
+  //     const postVideo = document.querySelector('.postVideo')
+  //     postVideo.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+  //     postVideo.parentNode.removeChild(postVideo)
+  //     body.style.overflow = 'visible'
+  //   });
+  // }
+
   openAllCourse()
   menu();
   slider();

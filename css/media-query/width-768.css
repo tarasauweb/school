@@ -88,4 +88,15 @@
     .modal-rec{
         width: 95%;
     }
+    .plan__zoom-title{
+        font-size: 40px;
+    }
+    .zoom-img{
+        margin-left: 0;
+        width: 170px;
+        height: auto;
+    }
+    .plan__block_zoom{
+        padding-right: 10px;
+    }
 }

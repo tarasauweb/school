@@ -77,4 +77,10 @@
     .rate__block{
         margin-bottom: 50px;
     }
+    .plan__block{
+        padding-left: 20px;
+    }
+    .plan__block_zoom{
+        padding-right: 10px;
+    }
 }

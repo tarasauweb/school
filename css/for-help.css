@@ -85,7 +85,7 @@
     -o-transition: 0.5s;
 }
 .help__btn::after{
-    content: '';
+  content: '';
   position: absolute;
   top: -50%;
   right: -50%;
@@ -93,6 +93,10 @@
   left: -50%;
   background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
   transform: rotateZ(60deg) translate(-5em, 7.5em);
+  -webkit-transform: rotateZ(60deg) translate(-5em, 7.5em);
+  -moz-transform: rotateZ(60deg) translate(-5em, 7.5em);
+  -ms-transform: rotateZ(60deg) translate(-5em, 7.5em);
+  -o-transform: rotateZ(60deg) translate(-5em, 7.5em);
 }
 .help__btn:hover::after{
     animation: sheenBtn 1s forwards;

@@ -279,6 +279,22 @@
     .footer__net-links{
         width: 100%;
     }
+    .life__btn{
+        margin: 0 !important;
+
+    }
+    .free-btn{
+        margin-top: 20px !important;
+    }
+    .plan__block{
+        padding: 10px;
+    }
+    .zoom-img{
+        display: none;
+    }
+    .plan__zoom-title{
+        font-size: 30px;
+    }
     
 }
 @media screen and (max-width:485px){
