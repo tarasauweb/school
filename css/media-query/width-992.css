@@ -83,4 +83,34 @@
     .plan__block_zoom{
         padding-right: 10px;
     }
+    .author__title {
+       position:absolute;
+       top:0px;
+       left:0px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       width: 100%;
+    }
+    .author{
+        position: relative;
+    }
+    .about-author{
+        padding: 60px 0 20px 0;
+    }
+    .author__img{
+        margin-top: 140px;
+    }
+    .author__subblocks{
+        margin-top: 150px;
+        margin-right: 0;
+    }
+    .author__block{
+        width: 100%;
+
+    }
+    .author__img {
+        width: 470px;
+        height: auto;
+    }
 }

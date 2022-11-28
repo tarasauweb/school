@@ -14,6 +14,30 @@
     }
 }
 
+@media screen and (max-width:1200px){
+    .author__subblock{
+        width: 100%;
+    }
+    .author__subblock:nth-child(odd) {
+        margin-right: 0px;
+    }
+    .author__subblock:last-child{
+        width: 100%;
+    }
+    .author__subblock:nth-child(4){
+        width: 100%;
+    }
+    .author__subblocks{
+        margin-top: 40px;
+    }
+    .author__title {
+        font-size: 40px;
+    }
+    .author__br{
+        display: inline-block;
+    }
+}
+
 @media screen and (max-width:1100px){
 
     .abstracts__img{

@@ -99,4 +99,11 @@
     .plan__block_zoom{
         padding-right: 10px;
     }
+    .author{
+        display: flex;
+        flex-direction: column;
+    }
+    .author__subblocks{
+        margin-top: 20px;
+    }
 }
