@@ -268,7 +268,6 @@
     .offer_links{
         display: flex;
         flex-direction: column;
-        align-items: end;
         margin-top: 20px;
     }
     /* .footer_allitem_1{
@@ -321,12 +320,35 @@
     .author__subtitle {
         margin-top: 10px;
     }
+    
 }
 @media screen and (max-width:485px){
     .offer-m__span{
         top:-40px;
     }
+    .rate__block_rec{
+        width: 100%;
+        height: auto;
+        padding-bottom: 30px;
+    }
+    .rate__title{
+        text-align: left;
+    }
+    .rate__sub span{
+        display: inline;
+        width: 270px;
+    }
+    .rate__title-block{
+        font-size: 30px;
+    }
+    .rate__subtitle{
+        font-size: 16px;
+    }
+    .rate__item{
+        font-size: 14px;
+    }
 }
+
 @media screen and (max-width:400px){
     
     .after__title,
@@ -340,8 +362,13 @@
     .rate__block{
         width: 100%;
         padding:30px 10px 10px 10px;
+        height: auto;
+        padding-bottom: 30px;
     }
     .offer-m__span{
         top:-20px;
+    }
+    .rate__title-block{
+        font-size: 28px;
     }
 }

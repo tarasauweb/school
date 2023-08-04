@@ -281,15 +281,15 @@ window.addEventListener("load", () => {
   }
   callForms()
 
-  function widget () {
-    const widget = document.querySelector('.widget')
-    const closeWidget = document.querySelector('.widget__close')
-    setTimeout(()=>{
-      widget.classList.add('widget-active')
-    },1000)
-    closeWidget.addEventListener('click' , ()=>{
-      widget.classList.remove('widget-active')
-    })
-  }
-  widget ()
+//   function widget () {
+//     const widget = document.querySelector('.widget')
+//     const closeWidget = document.querySelector('.widget__close')
+//     setTimeout(()=>{
+//       widget.classList.add('widget-active')
+//     },1000)
+//     closeWidget.addEventListener('click' , ()=>{
+//       widget.classList.remove('widget-active')
+//     })
+//   }
+//   widget ()
 });
